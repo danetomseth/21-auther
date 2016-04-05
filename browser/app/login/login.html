@@ -1,13 +1,13 @@
 <div class="signin-container">
 	<div class="buffer local">
-		<form>
+		<form ng-submit="loginUser(userForm)" ng-model="userForm">
 			<div class="form-group">
 				<label>email</label>
-				<input type="text" class="form-control" required />
+				<input type="text" ng-model="userForm.email" class="form-control" required />
 			</div>
 			<div class="form-group">
 				<label>password</label>
-				<input type="password" class="form-control" required />
+				<input type="password" ng-model="userForm.password" class="form-control" required />
 			</div>
 			<button type="submit" class="btn btn-block btn-primary">login</button>
 		</form>
