@@ -16,7 +16,6 @@ app.factory('AuthFactory', function($http, $state) {
             $http.post('/login', data).then(function() {
                 $state.go('stories');
             })
-            this.getUser();
         },
 
         logOut: function() {
@@ -25,8 +24,8 @@ app.factory('AuthFactory', function($http, $state) {
         	})
         }, 
         getUser: function() {
-        	$http.get('/currentuser').then(function(data) {
-        		console.log('currentUser is *&&&&', data);
+        	return $http.get('/currentuser').then(function(data) {
+        		return data;
         	})
         }
     }

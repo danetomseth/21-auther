@@ -2,7 +2,10 @@
 
 var app = require('express')();
 var path = require('path');
+var session = require('express-session');
 var bodyParser = require('body-parser');
+var passport = require('passport');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -15,10 +18,10 @@ app.use(require('./logging.middleware'));
 
 
 app.use(require('./statics.middleware'));
+app.use(passport.initialize());
+app.use(passport.session());
 
-
-
-
+app.use(require('./google.middleware'));
 
 
 

@@ -1,6 +1,7 @@
 'use strict';
 
 var router = require('express').Router();
+//url: /api/......
 
 router.use('/users', require('./users/user.router'));
 
